@@ -10,7 +10,9 @@ var hour2 = $('#hour2');
 var hour3 = $('#hour3');
 var hour4 = $('#hour4');
 var hour5 = $('#hour5');
-var currentTime = $([i]);
+var txtBlock = $('#block');
+var currentDay = $('#now');
+var root = $('#rootId');
 var userId = $('.Id');
 
 
@@ -27,20 +29,29 @@ $("#currentDay").text(dayYear);
      localStorage.setItem(userId, text);
    
      
- });
+ })
 
-
+function getStored() {
+var usr = JSON.parse(localStorage.getItem('userId'));
+var txt = JSON.parse(localStorage.getItem('text'));
+}; 
 
  
-   
-function changeTime() {
-    var firstHour = 9;
-        if (firstHour  < [i]) {
-          $(querySelector.css(".past")); 
-        } else if (firstHour  == [i]) {
-            $(querySelector.css(".present"));
-        } else if (firstHour  > [i]) {
-            $(querySelector.css(".future"));
+ function changeTime() {
+    
+    for(i=0; i < 9; i++) {
+        
+        if (day < dayYear) {
+            $(block).eq(i).addClass("past");
+        
+        } else if (day === dayYear) {
+            $(block).eq(i).addClass("present");
+        
+        } else if (day > dayYear) {
+           $(block).eq(i).addClass("future");
+        
         }
-     
-    }
+        hour9++;
+        rootId.append(hour);
+   
+}}
