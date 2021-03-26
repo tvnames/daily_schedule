@@ -27,10 +27,19 @@ $("#currentDay").text(dayYear);
      var text = $(this).siblings('.description').val();
      var userId = $(this).parent().attr('id');
      localStorage.setItem(userId, text);
+     displayLocalStorage();
+     
  });
 
 function displayLocalStorage() {
-    var hour = 9
+    var hour = 9;
+    while(hour < 18) {
+        var getLocal = localStorage.getItem
+        ('#block-' +hour);
+        $('#block' , +hour + ' > textarea').val(getLocal);
+        
+
+    }
 }
 
 
@@ -54,6 +63,9 @@ function displayLocalStorage() {
 }
 
 }
+
+displayLocalStorage();
+setInterval(changeTime, 1000);
 
 
 
